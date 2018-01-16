@@ -38,14 +38,7 @@ public class Robot extends IterativeRobot {
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 	}
-	
-	//All needed subsystems are declared
-	public static Collector Collector;
-	
-	//All needed subsystems are constructed
-	public Robot () {
-		Collector=new Collector();
-	}
+
 
 	/**
 	 * This function is called once each time the robot enters Disabled mode.

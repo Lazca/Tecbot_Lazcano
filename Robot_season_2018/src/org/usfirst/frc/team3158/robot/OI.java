@@ -62,6 +62,7 @@ public class OI {
 		b.whenReleased(new StopShooter());
 		a.whenPressed(new GetBox());
 		a.whenReleased(new StopShooter());
+		x.whenPressed(new ExtendCollector());
 		
 	}
 	

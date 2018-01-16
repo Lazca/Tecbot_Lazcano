@@ -11,13 +11,13 @@ public class ShootBox extends Command {
 
     public ShootBox() {
     	//ShootBox requires Robot.Collector
-    	requires(Robot.Collector);
+    	requires(Robot.collector);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     	//Robot.Collector.ShootBox() is called
-    	Robot.Collector.ShootBox();
+    	Robot.collector.ShootBox();
     }
 
     // Called repeatedly when this Command is scheduled to run

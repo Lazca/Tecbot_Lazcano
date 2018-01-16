@@ -12,22 +12,22 @@ public class GetBox extends Command {
     public GetBox() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.Collector);
+    	requires(Robot.collector);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.Collector.GetBox();
     }
 
     //Robot.Collector.GetBox will run until the limit switch returns true
      
     protected void execute() {
     //	Robot.Collector.GetBox();
+    	Robot.collector.GetBox();
     }
 
     protected boolean isFinished() {
-        return (Robot.Collector.LimitBoolean());
+        return Robot.collector.LimitBoolean();
     }
 
     // Called once after isFinished returns true

@@ -17,4 +17,8 @@ public class RobotMap {
 	public static int MotorCollectorLeft=1; //Motor port
 	public static int MotorCollectorRigth=2; //Motor port
 	public static int CollectorLimitSwitch=3; //Motor port
+	public static int PistonCollectorLeft_1=4; //Piston port 1
+	public static int PistonCollectorLeft_2=5; //Piston port 1
+	public static int PistonCollectorRigth_1=4; //Piston port 1
+	public static int PistonCollectorRigth_2=5; //Piston port 1
 }

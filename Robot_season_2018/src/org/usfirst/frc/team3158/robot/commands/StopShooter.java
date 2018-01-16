@@ -11,12 +11,12 @@ public class StopShooter extends Command {
 
     public StopShooter() {
     	//StopShooter requires Robot.Collector
-    	requires(Robot.Collector);
+    	requires(Robot.collector);
     }
     // Called just before this Command runs the first time
     protected void initialize() {
     	//Robot.Collector.Stop() is called
-    	Robot.Collector.Stop();
+    	Robot.collector.Stop();
     }
 
     // Called repeatedly when this Command is scheduled to run
