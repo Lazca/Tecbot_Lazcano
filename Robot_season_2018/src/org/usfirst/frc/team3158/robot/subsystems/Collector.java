@@ -6,31 +6,38 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team3158.robot.RobotMap;
 
-public class Collector extends Subsystem{
+public class Collector extends PIDSubsystem{
 
-	//The two motors and limit switch required for this subsystem are declared
+	//The two motors, two double solenoids and limit switch required for this subsystem are declared
 	SpeedController collectorLeft;
 	SpeedController collectorRigth;
 	DigitalInput limitSwitch;
 	DoubleSolenoid leftPiston;
 	DoubleSolenoid rigthPiston;
 	boolean extend;
+	AnalogChannel collectorPot;
 	/*the two motors and limit switch are set to their port when this constructor is called 
 	*in Robot.java
 	*/
 	
 	public Collector() {
+		super("collector", 0, 0, 0);
 		switch(RobotMap.TypeOfCollectorMotor)
+		
 		{
 		case 0:{
-			collectorLeft=new CANTalon(RobotMap.MotorCollectorLeft);
-			collectorRigth=new CANTalon(RobotMap.MotorCollectorRigth);
+			
+			collectorLeft=new Talon(RobotMap.MotorCollectorLeft);
+			collectorRigth=new Talon(RobotMap.MotorCollectorRigth);
 			leftPiston=new DoubleSolenoid(RobotMap.PistonCollectorLeft_1,RobotMap.PistonCollectorLeft_2);
 			rigthPiston=new DoubleSolenoid(	RobotMap.PistonCollectorRigth_1,RobotMap.PistonCollectorRigth_2);
 			extend=false;
+			collectorPot=1;
 		break;}
 		case 1:{
 			collectorLeft=new Talon(RobotMap.MotorCollectorLeft);
